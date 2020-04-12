@@ -1,0 +1,25 @@
+note over browser:
+Content of note is contined in request formdata under "note"
+end note over 
+browser->server: HTTPS POST https://fullstack-example.herokuapp.com/new_note
+note over server:
+server adds note to list of notes
+end note over
+server->browser: Status Code 302 Redirect location /notes
+browser->server: HTTPS GET https://fullstack-example.herokuapp.com/notes
+server->browser: HTML-code
+browser->server: HTTPS GET https://fullstack-exampleapp.herokuapp.com/main.css
+server->browser: main.css
+browser->server: HTTPS GET https://fullstack-exampleapp.herokuapp.com/main.js
+server->browser: main.js
+note over browser:
+browser executes js code to 
+request data from the server
+end note over 
+
+browser->server: HTTPS GET https://fullstack-exampleapp.herokuapp.com/data.json
+server->browser: [{content: "note content", date: "2020-04-10"}, ...]
+note over browser:
+browser executes event handler
+handler renders notes to display
+end note over 
