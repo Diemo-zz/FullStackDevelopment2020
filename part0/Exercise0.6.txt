@@ -1,0 +1,5 @@
+note over browser:
+browser adds note to list of notes and redraws them
+end note over browser
+browser->server: HTTPS POST https://fullstack-example.herokuapp.com/
+server->browser: Status code 201 Created
